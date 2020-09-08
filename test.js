@@ -34,14 +34,12 @@ describe('POST /', () =>{
         })
     })
 
-    it("should return meta has undefined",(done)=>{
-        var url="";
+    it("should return url is required",(done)=>{
         request(app).post('/')
-        .send({url})
         .expect(400)
         .end((err,res)=>{
             if(err) return done(err);
-            expect(res.body.message).toBe("url format is not proper")
+            expect(res.body.message).toBe("url is required")
             done();
 
         })

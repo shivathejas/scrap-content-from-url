@@ -12,6 +12,11 @@ app.post("/",(req,res)=>{
     var url = req.body.url;
     var expression =  /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi; 
     var regex = new RegExp(expression);
+    if(!url){
+        return res.status(400).send({
+            message:"url is required"
+        })
+    }
     if(!url.match(regex)){
         return res.status(400).send({
             message:"url format is not proper"
