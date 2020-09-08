@@ -5,7 +5,7 @@ const { text } = require('express');
 
 describe('POST /', () =>{
     it("should return the scrap data from the given url",(done)=>{
-        var url="https://www.geeksforgeeks.org/how-to-validate-url-using-regular-expression-in-javascript/";
+        var url="https://medium.com/hacking-talent/kafka-all-you-need-to-know-8c7251b49ad0";
        
        request(app).post('/')
             .send({url})
